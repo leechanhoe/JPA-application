@@ -1,0 +1,6 @@
+
+*.pdf
+*.bat
+jpashop/gradlew
+*.jar
+jpashop/gradle/wrapper/gradle-wrapper.jar
