@@ -1,0 +1,17 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:test // 스프링은 기본적으로 메모리모드로 돌려줌
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create # 애플리케이션 실행시점에 엔티티를 지우고 다시생성
+#  properties:
+#    hibernate:
+#      # show_sql: true - sout 사용
+#      format_sql: true
+logging.level:
+  org.hibernate.SQL: debug # 하이버네이트가 생성하는 spl이 보임 - logger 사용
+# org.hibernate.type: trace #스프링 부트 2.x, hibernate5
+# org.hibernate.orm.jdbc.bind: trace #스프링 부트 3.x, hibernate6
