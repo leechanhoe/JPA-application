@@ -30,7 +30,7 @@ public class Order {
     // persist orderitemA ,B ,C 를 하고 order을 per해줘야하는데 위같이하면 전파돼서 order만 persist해줘도됨
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = LAZY)
+    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
@@ -71,7 +71,7 @@ public class Order {
     //주문 취소
     public void cancel() {
         if(delivery.getStatus() == DeliveryStatus.COMP){
-            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합ㅇ니다.");
+            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
         }
 
         this.setStatus(OrderStatus.CANCEL);
