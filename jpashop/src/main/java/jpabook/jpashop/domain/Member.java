@@ -24,7 +24,7 @@ public class Member {
     @Embedded // able 중 둘중 하나만 있어도됨
     private Address address;
 
-    @JsonIgnore
+    @JsonIgnore // 양방향 연관관계는 한쪽에다 이걸 해줘야함
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
