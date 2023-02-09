@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @BatchSize(size = 1000)
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) 
     // persist orderitemA ,B ,C 를 하고 order을 per해줘야하는데 위같이하면 전파돼서 order만 persist해줘도됨
     private List<OrderItem> orderItems = new ArrayList<>();

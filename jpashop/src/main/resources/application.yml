@@ -11,6 +11,7 @@ spring:
     hibernate:
       # show_sql: true - sout 사용
       format_sql: true
+      default_batch_fetch_size: 100
 logging.level:
   org.hibernate.SQL: debug # 하이버네이트가 생성하는 spl이 보임 - logger 사용
 # org.hibernate.type: trace #스프링 부트 2.x, hibernate5
